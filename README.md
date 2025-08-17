@@ -1,54 +1,60 @@
-AI Meeting Notes Summarizer
-An intelligent full-stack web application that transforms raw meeting transcripts into clean, structured, and editable summaries using the Google Gemini API. The application is built with Node.js and EJS and is designed for easy deployment on Vercel.
 
-Features
-Upload or Paste Transcripts: Users can either upload a .txt file or paste the transcript text directly into a textarea.
+# 📝 AI Meeting Notes Summarizer
 
-Customizable Summaries: Provide custom prompts (e.g., "focus on action items," "create an executive summary") to tailor the AI's output.
+An intelligent full-stack web application that transforms raw meeting transcripts into **clean, structured, and editable summaries** using the **Google Gemini API**.  
+Built with **Node.js** and **EJS**, designed for **easy deployment on Vercel**.
 
-AI-Powered Generation: Leverages the power of the Google Gemini API to generate high-quality, context-aware summaries.
+---
 
-Editable Output: The generated summary is displayed in an editable textarea, allowing for quick modifications and refinements.
+## 🚀 Features
 
-Secure Email Sharing: Share the final summary with multiple recipients via email, configured securely for a production environment.
+- 📂 **Upload or Paste Transcripts**: Upload a `.txt` file or paste text directly into a textarea.  
+- 🎯 **Customizable Summaries**: Provide prompts (e.g., *"focus on action items"*, *"create an executive summary"*) to tailor the AI's output.  
+- 🤖 **AI-Powered Generation**: Uses the **Google Gemini API** to generate high-quality, context-aware summaries.  
+- ✍️ **Editable Output**: Summaries appear in an editable textarea for quick refinements.  
+- 📧 **Secure Email Sharing**: Send summaries to multiple recipients via **Nodemailer**, configured securely.  
+- ⚡ **Vercel Ready**: Includes `vercel.json` for seamless serverless deployment.  
 
-Vercel Ready: Comes with a vercel.json configuration for seamless, serverless deployment.
+---
 
-Tech Stack
-Backend: Node.js, Express.js
+## 🛠️ Tech Stack
 
-Frontend: EJS (Embedded JavaScript templates), Tailwind CSS
+- **Backend**: Node.js, Express.js  
+- **Frontend**: EJS (Embedded JavaScript templates), Tailwind CSS  
+- **AI Model**: Google Gemini API (`gemini-1.5-flash`)  
+- **File Handling**: Multer (multipart/form-data)  
+- **Emailing**: Nodemailer  
+- **Deployment**: Vercel  
 
-AI Model: Google Gemini API (gemini-1.5-flash)
+---
 
-File Handling: Multer (for multipart/form-data)
+## ⚙️ Setup and Installation (Local Development)
 
-Emailing: Nodemailer
+Follow these steps to set up and run the project locally.
 
-Deployment: Vercel
+### 1️⃣ Prerequisites
+- Node.js (**v18.x or later** recommended)  
+- npm (comes with Node.js)  
+- Google Account (to get a **Gemini API Key**)  
+- Email account with SMTP access (e.g., Gmail with an App Password)  
 
-Setup and Installation (Local Development)
-Follow these steps to get the project running on your local machine.
-
-1. Prerequisites
-Node.js (v18.x or later recommended)
-
-npm (comes with Node.js)
-
-A Google Account to get a Gemini API Key.
-
-An email account with SMTP access (e.g., Gmail with an App Password).
-
-2. Clone the Repository
+### 2️⃣ Clone the Repository
+```bash
 git clone <your-repository-url>
 cd ai-meeting-summarizer
+````
 
-3. Install Dependencies
+### 3️⃣ Install Dependencies
+
+```bash
 npm install
+```
 
-4. Set Up Environment Variables
-Create a file named .env in the root of your project directory. Copy the contents of .env.example (if provided) or use the structure below and fill in your credentials.
+### 4️⃣ Set Up Environment Variables
 
+Create a `.env` file in the project root. Use the following structure:
+
+```bash
 # Google Gemini API Key
 GEMINI_API_KEY="your_gemini_api_key_here"
 
@@ -57,28 +63,34 @@ SMTP_HOST="smtp.gmail.com"
 SMTP_PORT="587"
 SMTP_USER="your.email@gmail.com"
 SMTP_PASS="your_16_character_gmail_app_password"
+```
 
-Important Notes:
+#### 🔑 Important Notes
 
-Gemini API Key: Get your key from Google AI Studio.
+* **Gemini API Key** → Get it from [Google AI Studio](https://aistudio.google.com/).
+* **Gmail SMTP\_PASS** → Must be a **16-character App Password**, not your regular Google password. Generate it in **Google Account → Security → App Passwords** (requires 2-Step Verification).
 
-Gmail SMTP_PASS: You must use a 16-character App Password, not your regular Google account password. You can generate one in your Google Account's security settings after enabling 2-Step Verification.
+### 5️⃣ Run the Application
 
-5. Run the Application
+```bash
 node index.js
+```
 
-The application should now be running at http://localhost:3000.
+The app should now be live at: **[http://localhost:3000](http://localhost:3000)**
 
-Deployment to Vercel
-This project is configured for easy deployment to Vercel.
+---
 
-Push to Git: Make sure your project (including index.js, package.json, and vercel.json) is pushed to a GitHub, GitLab, or Bitbucket repository.
+## 🌐 Deployment on Vercel
 
-Import Project: On your Vercel dashboard, import the repository. Vercel will automatically detect it as a Node.js project.
+1. **Push to Git** → Make sure `index.js`, `package.json`, and `vercel.json` are in your repo.
+2. **Import Project** → On [Vercel Dashboard](https://vercel.com), import the repository.
+3. **Configure Env Vars** → Add the same keys (`GEMINI_API_KEY`, `SMTP_HOST`, etc.) in Vercel → Project Settings → Environment Variables.
+4. **Deploy** → Click **Deploy**, Vercel builds & deploys automatically.
 
-Configure Environment Variables: In the Vercel project settings, navigate to "Environment Variables" and add the same keys and values from your local .env file (GEMINI_API_KEY, SMTP_HOST, etc.).
+---
 
-Deploy: Click the "Deploy" button. Vercel will build and deploy your application.
+## 📜 License
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+
+
