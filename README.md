@@ -40,8 +40,8 @@ Follow these steps to set up and run the project locally.
 
 ### Clone the Repository
 ```bash
-git clone <your-repository-url>
-cd ai-meeting-summarizer
+git clone https://github.com/prince-vishwakarma-cs/ai-summarizer.git
+cd ai-summarizer
 ````
 
 ### Install Dependencies
